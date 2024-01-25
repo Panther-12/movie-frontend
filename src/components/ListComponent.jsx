@@ -1,7 +1,7 @@
 import React from 'react'
 import Movie from './Movie';
 
-export const ListComponent = ({type, data}) => {
+export const ListComponent = ({type, data, updateState}) => {
     console.log(data)
     let filteredResults = null
     if(data!==null){
@@ -23,7 +23,7 @@ export const ListComponent = ({type, data}) => {
                 {filteredResults!==null?filteredResults.map((item,index)=>{
                     return(
                         <div>
-                            <Movie title={item.title} id={item.id} status={type} key={index}/>
+                            <Movie title={item.title} id={item.id} status={type} key={index} updateState={updateState}/>
                             <hr/>
                         </div>
                     )

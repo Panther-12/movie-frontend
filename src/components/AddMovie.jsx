@@ -27,6 +27,10 @@ export const AddMovie = () => {
         })
     }
 
+    const updateState = ()=>{
+        setRequest(!request)
+    }
+
     useEffect(()=>{
         axios.get(endpoint).then(response=>{
             console.log(response.data)
@@ -47,8 +51,8 @@ export const AddMovie = () => {
         </div>
         {movies!==null?
         <div className="sections-wrapper">
-            <ListComponent type="WatchList" data={movies} key="1000"/>
-            <ListComponent type="Watched" data={movies} key="2000"/>
+            <ListComponent type="WatchList" data={movies} key="1000" updateState={updateState}/>
+            <ListComponent type="Watched" data={movies} key="2000" updateState={updateState}/>
         </div>  :  "Loading..."
         }
     </div>

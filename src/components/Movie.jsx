@@ -1,10 +1,9 @@
 import React from 'react'
 import axios from 'axios'
-import Notification from '../utils/Notification'
 
 
 
-export const Movie = ({title, status, id}) => {
+export const Movie = ({title, status, id, updateState}) => {
     const endpoint = "http://localhost:8000/movies/"+id
 
     const data = {
@@ -13,17 +12,21 @@ export const Movie = ({title, status, id}) => {
         watched:status==="Watched"?false:true
     }
     const changeState = ()=>{
-        axios.put(endpoint,data).then(response=>{
-            console.log("Movie state updated successfully")
-            window.localStorage.setItem("text","Movie state updated successfully")
-            window.location.reload()
-        })
+        try{
+            axios.put(endpoint,data).then(response=>{
+                console.log("Movie state updated successfully")
+                window.localStorage.setItem("text","Movie state updated successfully")
+                updateState()
+            })
+        } catch(error){
+            console.log(`Error encountered:${error.message}`)
+        }
     }
     const deleteMovie = ()=>{
         axios.delete(endpoint).then(response=>{
             console.log("Movie deleted successfully")
             window.localStorage.setItem("text","Movie deleted successfully")
-            window.location.reload()
+            updateState()
         })
     }
 
@@ -40,7 +43,6 @@ export const Movie = ({title, status, id}) => {
                 Delete
             </button>
         </div>
-        <Notification text={window.localStorage.getItem("text")}/>
     </div>
   )
 }
