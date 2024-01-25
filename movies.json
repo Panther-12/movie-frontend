@@ -1,43 +1,23 @@
 {
   "movies": [
     {
-      "id": 1,
-      "title": "into the badlands",
+      "id": "1",
+      "title": "Badlands",
       "watched": false
     },
     {
-      "id": 2,
-      "title": "Men in black",
-      "watched": false
-    },
-    {
-      "id": 3,
-      "title": "Thor ragnarok",
+      "id": "3950",
+      "title": "Brawlhalla",
       "watched": true
     },
     {
-      "id": 4,
-      "title": "trinkets",
+      "id": "9832",
+      "title": "Mother",
       "watched": false
     },
     {
-      "id": null,
-      "title": "Thor ragnarok",
-      "watched": false
-    },
-    {
-      "id": null,
-      "title": "zelda",
-      "watched": false
-    },
-    {
-      "id": null,
-      "title": "call of the wild",
-      "watched": false
-    },
-    {
-      "id": null,
-      "title": "max max",
+      "id": 4821,
+      "title": "Kong ",
       "watched": false
     }
   ]

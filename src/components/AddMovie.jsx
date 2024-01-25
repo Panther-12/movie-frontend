@@ -16,7 +16,7 @@ export const AddMovie = () => {
 
     const addMovie = ()=>{
         const data = {
-            id:Math.floor(Math.random*60),
+            id:Math.floor(Math.random()*10000),
             title:title,
             watched: false
         }
@@ -36,17 +36,21 @@ export const AddMovie = () => {
 
   return (
     <div className="movie-wrapper">
-        <div>
-            <label for="hs-trailing-multiple-add-on" class="sr-only">Multiple add-on</label>
-            <div class="flex rounded shadow-sm">
-                <input type="text" id="hs-trailing-multiple-add-on" name="inline-add-on" class="py-3 px-4 block w-full border-gray-200 shadow-sm rounded-lg rounded-e-none text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg:white dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Movie..." onChange={handleInputChange}/>
-                <div class="px-4 inline-flex items-center min-w-fit rounded-e-md border border-s-0 border-gray-200 bg-gray-50 dark:bg-gray-700 dark:border-gray-600">
-                <span class="items-center py-0.5 px-1.5 text-xs font-medium bg-inherit text-white hover:cursor-pointer" onClick={addMovie}>Add</span>
+        <div className="add-container mb-5 w-1/4">
+            <label htmlFor="hs-trailing-multiple-add-on" className="sr-only">Multiple add-on</label>
+            <div className="flex rounded shadow-sm">
+                <input type="text" id="hs-trailing-multiple-add-on" name="inline-add-on" className="py-3 px-4 block w-full border-gray-200 shadow-sm rounded-lg rounded-e-none text-sm focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none bg:white dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600" placeholder="Movie..." onChange={handleInputChange}/>
+                <div className="px-4 inline-flex items-center min-w-fit rounded-e-md border border-s-0 border-gray-200 bg-slate-900">
+                <span className="items-center py-0.5 px-1.5 text-xs font-medium bg-inherit text-white hover:cursor-pointer" onClick={addMovie}>Add</span>
                 </div>
             </div>
         </div>
-        <ListComponent type="WatchList" data={movies}/>
-        <ListComponent type="Watched" data={movies}/>
+        {movies!==null?
+        <div className="sections-wrapper">
+            <ListComponent type="WatchList" data={movies} key="1000"/>
+            <ListComponent type="Watched" data={movies} key="2000"/>
+        </div>  :  "Loading..."
+        }
     </div>
 
 

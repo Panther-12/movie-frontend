@@ -3,14 +3,29 @@
 @tailwind utilities;
 
 .movie-wrapper{
-    width: 400px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     background-color: inherit;
+
+
+}
+.movies-wrapper{
+    align-items: center;
 }
 
-.listwrapper{
+
+.sections-wrapper{
     display: flex;
-    flex-direction:row ;
-    justify-content: space-between;
-    width: 600px;
+    flex-direction: row;
+    gap: 40px;
+    width:auto;
+}
+.title-wrapper{
+    width:125px;
+}
+.border-wrapper{
+    border-radius: 10px;
+    overflow: hidden;
 }
