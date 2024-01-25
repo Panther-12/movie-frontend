@@ -17,7 +17,7 @@ export const ListComponent = ({type, data}) => {
         <div className="border-wrapper border border-gray-300 mt-3">
             <div className="topItem border border-gray-300 flex flex-row justify-between p-3">
                 <div className="white-space border-r-gray-300"></div>
-                <div className="text">Search Movies...</div>
+                <div className="text text-gray-400">Search movies...</div>
             </div>
             <div className="items p-5">
                 {filteredResults!==null?filteredResults.map((item,index)=>{
