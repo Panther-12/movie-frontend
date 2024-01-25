@@ -1,0 +1,44 @@
+{
+  "movies": [
+    {
+      "id": 1,
+      "title": "into the badlands",
+      "watched": false
+    },
+    {
+      "id": 2,
+      "title": "Men in black",
+      "watched": false
+    },
+    {
+      "id": 3,
+      "title": "Thor ragnarok",
+      "watched": true
+    },
+    {
+      "id": 4,
+      "title": "trinkets",
+      "watched": false
+    },
+    {
+      "id": null,
+      "title": "Thor ragnarok",
+      "watched": false
+    },
+    {
+      "id": null,
+      "title": "zelda",
+      "watched": false
+    },
+    {
+      "id": null,
+      "title": "call of the wild",
+      "watched": false
+    },
+    {
+      "id": null,
+      "title": "max max",
+      "watched": false
+    }
+  ]
+}
